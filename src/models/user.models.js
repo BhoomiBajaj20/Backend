@@ -27,7 +27,7 @@ const  userSchema = new Schema({
             index: true,// to enable searching field
         },
 
-        avtar: {
+        avatar: {
             type: String, // cloudinary URL use
             required: true,
         },
@@ -73,7 +73,7 @@ userSchema.methods.generateAccessToken = function (){
 
         process.env.ACCESS_TOKEN_SECRET,
         {
-            expireIn:  process.env.ACCESS_TOKEN_EXPIRY
+            expiresIn:  process.env.ACCESS_TOKEN_EXPIRY
         }
     )
 }
@@ -86,7 +86,7 @@ userSchema.methods.generateRefreshToken = function (){
 
         process.env.REFRESH_TOKEN_SECRET,
         {
-            expireIn:  process.env.REFRESH_TOKEN_EXPIRY
+            expiresIn:  process.env.REFRESH_TOKEN_EXPIRY
         }
     )
 }
